@@ -1,6 +1,23 @@
 const textView = document.getElementById("textView")
 const defaultText = "入力したテキストがここに表示されます"
 
+// クエリからデフォルト文字を入力&viewに反映
+setDefaultText()
+
+function setDefaultText() {
+    // クエリストリングからtextパラメータの値を取得
+    let queryText = decodeURI(
+        location.search
+            .split("&")
+            .find(param => param.indexOf("text"))
+            .split("=")[1]
+    )
+    // 入力枠に反映
+    document.getElementById("textInput").value = queryText
+    // この方法ではイベントが発火しないのでviewも手動反映
+    textView.innerText = queryText != "" ? queryText : defaultText
+}
+
 function inputChange() {
     let textInput = document.getElementById("textInput")
     textView.innerText = textInput.value != "" ? textInput.value : defaultText
