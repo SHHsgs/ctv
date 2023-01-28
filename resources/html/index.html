@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+    <script src="../scripts/index.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <main>
+      <div class="textArea">
+        <input type="text" class="textInput" id="textInput" name="textInput" oninput="inputChange()" placeholder="ここにテキストを入力" />
+        <span class="textView" id="textView">入力したテキストがここに表示されます</span>
+      </div>
+
+      <div class="customStyle">
+        <textarea class="styleInput" id="styleInput" placeholder="ここにスタイルを入力"></textarea>
+        <button class="styleApplyButton" onclick="applyStyleEvent()">適用</button>
+      </div>
+    </main>
+  </body>
+
+</html>

@@ -1,0 +1,44 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.textArea .textInput {
+    margin-top: 20vh;
+}
+
+.textArea .textView {
+    position: absolute;
+    top: 40vh;
+}
+
+.customStyle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 10vh;
+    width: 24rem;
+}
+
+.customStyle .styleInput {
+    width: inherit;
+    height: 4rem;
+}
+
+.customStyle .styleApplyButton {
+    position: relative;
+    top: 1rem;
+    right: 0;
+}
