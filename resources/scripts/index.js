@@ -9,8 +9,8 @@ function setDefaultText() {
     let queryText = decodeURI(
         location.search
             .split("&")
-            .find(param => param.indexOf("text"))
-            .split("=")[1]
+            .find(param => param.indexOf("text") >= 0)
+            ?.split("=")[1]
     )
     // 入力枠に反映
     document.getElementById("textInput").value = queryText
@@ -20,7 +20,7 @@ function setDefaultText() {
 
 function inputChange() {
     let textInput = document.getElementById("textInput")
-    textView.innerText = textInput.value != "" ? textInput.value : defaultText
+    textView.innerText = isNotEmpty(textInput.value) ? textInput.value : defaultText
 }
 
 function applyStyleEvent() {
@@ -66,4 +66,8 @@ function parseStyleToText(styleMap) {
 function applyStyle(styleMap) {
     let styleText = parseStyleToText(styleMap)
     textView.style = styleText
+}
+
+function isNotEmpty(text) {
+    return text != "" && text != undefined
 }
